@@ -1,5 +1,5 @@
 # Automatic License Plate Detection Project ANPR
-![License Plate Recognition](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Car_park_camera.jpg/400px-Car_park_camera.jpg)
+![License Plate Recognition](examples/ANPR.webp)
 
 ## Overview
 
