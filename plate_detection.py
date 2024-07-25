@@ -10,14 +10,6 @@ import sqlite3
 from datetime import datetime, timedelta
 import time
 
-# RTSP Camera Information
-USER_NAME = input("User Name: ")
-PASSWORD = input("Password: ")
-IP = "192.168.1.156"
-CONNECTION_POINT = "554"
-CHANNEL = "/ch1/main/av_stream"
-RTSP_URL = f'rtsp://{USER_NAME}:{PASSWORD}@{IP}:{CONNECTION_POINT}{CHANNEL}'
-
 # Connect to SQLite database
 db_file = 'license_plates.db'
 conn = sqlite3.connect(db_file)
@@ -188,6 +180,13 @@ def main(input_path, output_dir):
         cv2.destroyAllWindows()
 
     elif input_path.startswith('rtsp://'):
+        # RTSP Camera Information
+        USER_NAME = input("User Name: ")
+        PASSWORD = input("Password: ")
+        IP = "192.168.1.156"
+        CONNECTION_POINT = "554"
+        CHANNEL = "/ch1/main/av_stream"
+        RTSP_URL = f'rtsp://{USER_NAME}:{PASSWORD}@{IP}:{CONNECTION_POINT}{CHANNEL}'
         # Capture from camera stream
         while True:
             try:
@@ -221,6 +220,6 @@ def main(input_path, output_dir):
         print("Unsupported input type.")
 
 # Example usage for external camera stream
-input_path = RTSP_URL
+input_path = "camera"
 output_dir = 'output_directory'
 main(input_path, output_dir)
